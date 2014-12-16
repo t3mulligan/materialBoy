@@ -3,6 +3,7 @@ angular.module('app', ['ionic', 'uiGmapgoogle-maps', 'ng-cordova'])
   .controller('controller1', function ($scope, $http, $location, $ionicLoading) {
 
     $scope.form1 = {};
+      $scope.form1.poop="niggapoop"
 
 
     var onSuccess = function (position) {
