@@ -1,4 +1,4 @@
-angular.module('app', ['ionic', 'uiGmapgoogle-maps', 'ngCordova'])
+angular.module('app', ['ionic', 'uiGmapgoogle-maps', 'ng-cordova'])
 
   .controller('controller1', function ($scope, $http, $location, $ionicLoading) {
 
