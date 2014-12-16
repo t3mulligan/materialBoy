@@ -17,7 +17,6 @@
     <script src="cordova.js"></script>
 
 
-
     <!-- style link to compiled SASS -->
     <!-- <link href="css/ionic.app.css" rel="stylesheet"> -->
 
@@ -27,10 +26,8 @@
     <link rel="stylesheet" href="lib/angular-material/themes/indigo-theme.css">
 
 
-
-
 </head>
-<body ng-app="app" ng-controller="controller1">
+<body ng-app="app" ng-controller="controller1" md-theme="indigo">
 <div>
     <div>
 
@@ -44,23 +41,37 @@
 <script id="page13.html" type="text/ng-template">
     <ion-view view-title="materialBoy">
         <md-content>
-            <md-toolbar md-theme="indigo">
+            <md-toolbar>
                 <h2 class="md-toolbar-tools">
                     <span>materialBoy</span>
                 </h2>
             </md-toolbar>
+
+            <md-card>
+
+                <form>
+
+                    <md-text-float label="Location" ng-model="form1.zipBox"></md-text-float>
+
+
+                </form>
+
+
+            </md-card>
+
+
         </md-content>
 
-        <ion-content padding="true" class="has-header">
-            <form>
-                <label class="item item-input" name="zip">
-                    <span class="input-label">Location:</span>
-                    <input type="text" placeholder="City, State or Zip Code" ng-model="form1.zipBox">
-                </label>
-                <button ng-click="searchZip()" class="button button-stable button-block">Search</button>
-                <button ng-click="geoLoc()" class="button button-stable button-block">Near Me</button>
-            </form>
-        </ion-content>
+        <!--<ion-content padding="true" class="has-header">-->
+        <!--<form>-->
+        <!--<label class="item item-input" name="zip">-->
+        <!--<span class="input-label">Location:</span>-->
+        <!--<input type="text" placeholder="City, State or Zip Code" ng-model="form1.zipBox">-->
+        <!--</label>-->
+        <!--<button ng-click="searchZip()" class="button button-stable button-block">Search</button>-->
+        <!--<button ng-click="geoLoc()" class="button button-stable button-block">Near Me</button>-->
+        <!--</form>-->
+        <!--</ion-content>-->
     </ion-view>
 </script>
 
