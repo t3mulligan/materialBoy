@@ -1,9 +1,6 @@
-/* Empty. Add your own CSS if you like */
-
-.button1{
-    width:95%;
-    margin-left:auto;
-    margin-right:auto;
-    float: none;
-
+.loader{
+    width:200px;
+    margin-left:-webkit-calc(50% - 100px) !important;
+    margin-top:-webkit-calc(50% - 100px) !important;
 }
+.angular-google-map-container { height: 200px; }
