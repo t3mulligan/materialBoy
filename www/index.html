@@ -9,8 +9,6 @@
     <link href="css/style.css" rel="stylesheet">
 
 
-
-
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
@@ -19,12 +17,15 @@
     <script src="cordova.js"></script>
 
 
+
     <!-- style link to compiled SASS -->
     <!-- <link href="css/ionic.app.css" rel="stylesheet"> -->
 
     <!-- static ionic style -->
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="lib/angular-material/angular-material.css" rel="stylesheet">
+    <link rel="stylesheet" href="lib/angular-material/themes/indigo-theme.css">
+
 
 
 
@@ -32,17 +33,24 @@
 <body ng-app="app" ng-controller="controller1">
 <div>
     <div>
-        <ion-nav-bar class="bar-positive">
-            <ion-nav-back-button></ion-nav-back-button>
-        </ion-nav-bar>
+
         <ion-nav-view></ion-nav-view>
+
     </div>
 </div>
 
 <!-- ============Home Page===================================================== -->
 
 <script id="page13.html" type="text/ng-template">
-    <ion-view view-title="Churchboy">
+    <ion-view view-title="materialBoy">
+        <md-content>
+            <md-toolbar md-theme="indigo">
+                <h2 class="md-toolbar-tools">
+                    <span>materialBoy</span>
+                </h2>
+            </md-toolbar>
+        </md-content>
+
         <ion-content padding="true" class="has-header">
             <form>
                 <label class="item item-input" name="zip">
@@ -50,13 +58,10 @@
                     <input type="text" placeholder="City, State or Zip Code" ng-model="form1.zipBox">
                 </label>
                 <button ng-click="searchZip()" class="button button-stable button-block">Search</button>
-            <button ng-click="geoLoc()" class="button button-stable button-block">Near Me</button>
+                <button ng-click="geoLoc()" class="button button-stable button-block">Near Me</button>
             </form>
         </ion-content>
-
-
     </ion-view>
-
 </script>
 
 <!-- ============Results Page===================================================== -->
@@ -64,7 +69,9 @@
 <script id="page15.html" type="text/ng-template">
     <ion-view view-title="Results">
         <ion-content padding="true" class="has-header">
-            <div class="list card" ng-repeat="church in churchArray | orderBy : 'id' | filter:{'hasSundayMass' : 'true'}" ng-click="goDetails(church)">
+            <div class="list card"
+                 ng-repeat="church in churchArray | orderBy : 'id' | filter:{'hasSundayMass' : 'true'}"
+                 ng-click="goDetails(church)">
                 <div class="item item-divider">{{church.name}}</div>
                 <div class="item item-body">
                     <ion-item ng-repeat="time in church.times | filter: {'day': 'Sunday    '}">{{time.time}}</ion-item>
@@ -86,7 +93,8 @@
                     <ion-item>{{church.phone}}</ion-item>
                     <ion-item>
                         <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="map.options">
-                            <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+                            <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events"
+                                            idkey="marker.id">
                             </ui-gmap-marker>
                         </ui-gmap-google-map>
                     </ion-item>
@@ -97,17 +105,13 @@
     </ion-view></script>
 
 
-
-
-
-
-
-
-
 <!---------Dependencies for Angular Map Plugin ------------------------------------->
 <script src='http://maps.googleapis.com/maps/api/js?sensor=false'></script>
 <script type="text/javascript" src="lib/lodash/dist/lodash.min.js"></script>
 <script type="text/javascript" src="lib/angular-google-maps/dist/angular-google-maps.min.js"></script>
+<script src="lib/angular-material/angular-material.js"></script>
+<script src="lib/angular-aria/angular-aria.js"></script>
+<script src="lib/hammerjs/hammer.js"></script>
 <!---------------------------------------------------------------------------------->
 </body>
 </html>
