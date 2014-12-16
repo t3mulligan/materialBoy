@@ -30,7 +30,10 @@ angular.module('app', ['ionic', 'uiGmapgoogle-maps', 'ng-cordova', 'ngMaterial']
     }
 
     $scope.geoLoc= function(){
-      $ionicLoading.show();
+      $ionicLoading.show({
+        template:'<md-progress-circular md-theme="indigo" md-mode="indeterminate">',
+        noBackdrop:true
+      });
       navigator.geolocation.getCurrentPosition(onSuccess, onError);
 
 
@@ -39,7 +42,10 @@ angular.module('app', ['ionic', 'uiGmapgoogle-maps', 'ng-cordova', 'ngMaterial']
 
 //===General Scope Declarations========================test=============================
     $scope.searchZip = function () {
-      $ionicLoading.show();
+      $ionicLoading.show({
+        template:'<md-progress-circular md-theme="indigo" md-mode="indeterminate">',
+        noBackdrop:true
+      });
       $scope.geocoderFCN();
 
       // console.log($scope.form1.zasipBox);

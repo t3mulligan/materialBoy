@@ -46,20 +46,13 @@
                     <span>materialBoy</span>
                 </h2>
             </md-toolbar>
-
             <md-card>
-
-                <form>
-
+                <form layout="column">
                     <md-text-float label="Location" ng-model="form1.zipBox"></md-text-float>
-
-
+                    <md-button ng-click="searchZip()" class="md-raised md-primary">Search</md-button>
+                    <md-button ng-click="geoLoc()" class="md-raised">Near Me</md-button>
                 </form>
-
-
             </md-card>
-
-
         </md-content>
 
         <!--<ion-content padding="true" class="has-header">-->
@@ -79,16 +72,35 @@
 
 <script id="page15.html" type="text/ng-template">
     <ion-view view-title="Results">
-        <ion-content padding="true" class="has-header">
-            <div class="list card"
-                 ng-repeat="church in churchArray | orderBy : 'id' | filter:{'hasSundayMass' : 'true'}"
-                 ng-click="goDetails(church)">
-                <div class="item item-divider">{{church.name}}</div>
-                <div class="item item-body">
-                    <ion-item ng-repeat="time in church.times | filter: {'day': 'Sunday    '}">{{time.time}}</ion-item>
-                </div>
-            </div>
+
+        <ion-content>
+            <md-card ng-repeat="church in churchArray | orderBy : 'id' | filter:{'hasSundayMass' : 'true'}"
+                     ng-click="goDetails(church)">
+                <h3>{{church.name}}</h3>
+
+                <md-list>
+                    <md-item ng-repeat="time in church.times | filter: {'day': 'Sunday    '}">
+
+                        <md-item-content>{{time.time}}</md-item-content>
+                    </md-item>
+
+
+                </md-list>
+
+            </md-card>
         </ion-content>
+
+
+        <!--<ion-content padding="true" class="has-header">-->
+            <!--<div class="list card"-->
+                 <!--ng-repeat="church in churchArray | orderBy : 'id' | filter:{'hasSundayMass' : 'true'}"-->
+                 <!--ng-click="goDetails(church)">-->
+                <!--<div class="item item-divider">{{church.name}}</div>-->
+                <!--<div class="item item-body">-->
+                    <!--<ion-item ng-repeat="time in church.times | filter: {'day': 'Sunday    '}">{{time.time}}</ion-item>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</ion-content>-->
     </ion-view></script>
 
 <!--===========Details============================================================-->
