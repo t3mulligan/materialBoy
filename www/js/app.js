@@ -19,9 +19,6 @@ angular.module('app', ['ionic', 'uiGmapgoogle-maps', 'ng-cordova'])
       $scope.geocoderFCN();
 
 
-
-
-
     };
 
 // onError Callback receives a PositionError object

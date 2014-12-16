@@ -1,7 +1,32 @@
 {
   "name": "materialBoy",
-  "private": "true",
+  "private": true,
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.0.0-beta.13-nightly-908"
+  },
+  "version": "0.1.0",
+  "homepage": "https://github.com/t3mulligan/materialBoy",
+  "authors": [
+    "Tim Mulligan <t3.mulligan@gmail.com>"
+  ],
+  "description": "materialistic churchboys",
+  "main": "/www/index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-google-maps": "~2.0.12",
+    "angular-material": "~0.6.1",
+    "lodash": "~2.4.1",
+    "ng-cordova": "~0.0.3"
   }
 }
