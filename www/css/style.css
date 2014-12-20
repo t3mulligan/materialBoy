@@ -1,12 +1,15 @@
-.loader{
-    width:200px;
-    margin-left:-webkit-calc(50% - 100px) !important;
-    margin-top:-webkit-calc(50% - 100px) !important;
+.loader {
+    width: 200px;
+    margin-left: -webkit-calc(50% - 100px) !important;
+    margin-top: -webkit-calc(50% - 100px) !important;
 }
-.angular-google-map-container { height: 200px; }
 
+.angular-google-map-container {
+    height: 200px;
 
-.mainhome{
+}
+
+.mainhome {
 
     padding-top: 50%;
     margin-left: auto;
@@ -16,14 +19,12 @@
 
 }
 
+.space {
 
-.space{
-
-    padding:5px;
+    padding: 5px;
 }
 
-.underline{
-
+.underline {
 
     border-bottom: solid;
     border-width: thin;
@@ -32,8 +33,43 @@
 }
 
 .bar.bar-positive {
-  border-color: #3f51b5;
-  background-color: #3f51b5;
-  background-image: linear-gradient(0deg, #3f51b5, #3f51b5 50%, transparent 50%);
-  color: #fff;
+    border-color: #3f51b5;
+    background-color: #3f51b5;
+    background-image: linear-gradient(0deg, #3f51b5, #3f51b5 50%, transparent 50%);
+    color: #fff;
 }
+
+.church-name {
+    padding-top: 0%;
+    margin-bottom:1%;
+    font-size: large;
+    display: block;
+    padding-left: 5%;
+}
+
+.sunday-times {
+
+    font-size: medium;
+    display: block;
+    padding-left: 5%;
+}
+
+.more-details {
+    margin-bottom: 2%;
+    font-size: small;
+    display: block;
+    padding-left: 5%;
+    color: lightgray;
+}
+
+md-divider{
+    margin-left: auto;
+    margin-right: auto;
+    width: 88%;
+    margin-bottom: 2.5%;
+}
+
+
+
+
+

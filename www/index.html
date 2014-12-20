@@ -6,8 +6,6 @@
     <title></title>
 
 
-
-
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
@@ -26,7 +24,6 @@
     <link href="css/style.css" rel="stylesheet">
 
 
-
 </head>
 <body ng-app="app" ng-controller="controller1" md-theme="indigo">
 <div>
@@ -43,15 +40,15 @@
     <ion-view view-title="materialBoy">
         <md-content>
 
-<div class="mainhome">
-                    <form layout="column">
+            <div class="mainhome">
+                <form layout="column">
                     <md-text-float class="underline" label="Location" ng-model="form1.zipBox"></md-text-float>
                     <md-button ng-click="searchZip()" class="md-raised md-primary">Search</md-button>
-<span class="space"></span>
+                    <span class="space"></span>
 
                     <md-button ng-click="geoLoc()" class="md-raised">Near Me</md-button>
                 </form>
-           </div>
+            </div>
         </md-content>
 
         <!--<ion-content padding="true" class="has-header">-->
@@ -73,7 +70,7 @@
     <ion-view view-title="Results">
 
         <div class="bar bar-header bar-positive">
-            <h1 class="title">bar-calm</h1>
+            <h1 class="title">Results</h1>
         </div>
 
         <ion-content class="has-header" padding="true">
@@ -81,55 +78,45 @@
             <md-content>
                 <md-list>
                     <md-item ng-repeat="church in churchArray | orderBy : 'id' | filter:{'hasSundayMass' : 'true'}"
-                    ng-click="goDetails(church)">
-                        <h3>{{church.name}}</h3>
-                        <h4>{{church.sundayStr}}</h4>
-                        <p>Click for more details...</p>
-
-
-
-
-
-
+                             ng-click="goDetails(church)">
+                        <div class="div-list-item">
+                            <span class="church-name">{{church.name}}</span>
+                            <span class="sunday-times">Sunday Mass: {{church.sundayStr}}</span>
+                            <span class="more-details">Click for more details...</span>
+                            <md-divider></md-divider>
+                        </div>
                 </md-list>
-
-
 
 
             </md-content>
 
 
-
-
-
-
-
             <!--<md-list ng-repeat="church in churchArray | orderBy : 'id' | filter:{'hasSundayMass' : 'true'}"-->
-                     <!--ng-click="goDetails(church)">-->
-                <!--<h3>{{church.name}}</h3>-->
+            <!--ng-click="goDetails(church)">-->
+            <!--<h3>{{church.name}}</h3>-->
 
-                <!--<md-list>-->
-                    <!--<md-item ng-repeat="time in church.times | filter: {'day': 'Sunday    '}">-->
+            <!--<md-list>-->
+            <!--<md-item ng-repeat="time in church.times | filter: {'day': 'Sunday    '}">-->
 
-                        <!--<md-item-content>{{time.time}}</md-item-content>-->
-                    <!--</md-item>-->
+            <!--<md-item-content>{{time.time}}</md-item-content>-->
+            <!--</md-item>-->
 
 
-                <!--</md-list>-->
+            <!--</md-list>-->
 
             <!--</md-list>-->
         </ion-content>
 
 
         <!--<ion-content padding="true" class="has-header">-->
-            <!--<div class="list card"-->
-                 <!--ng-repeat="church in churchArray | orderBy : 'id' | filter:{'hasSundayMass' : 'true'}"-->
-                 <!--ng-click="goDetails(church)">-->
-                <!--<div class="item item-divider">{{church.name}}</div>-->
-                <!--<div class="item item-body">-->
-                    <!--<ion-item ng-repeat="time in church.times | filter: {'day': 'Sunday    '}">{{time.time}}</ion-item>-->
-                <!--</div>-->
-            <!--</div>-->
+        <!--<div class="list card"-->
+        <!--ng-repeat="church in churchArray | orderBy : 'id' | filter:{'hasSundayMass' : 'true'}"-->
+        <!--ng-click="goDetails(church)">-->
+        <!--<div class="item item-divider">{{church.name}}</div>-->
+        <!--<div class="item item-body">-->
+        <!--<ion-item ng-repeat="time in church.times | filter: {'day': 'Sunday    '}">{{time.time}}</ion-item>-->
+        <!--</div>-->
+        <!--</div>-->
         <!--</ion-content>-->
     </ion-view></script>
 
@@ -138,25 +125,37 @@
 <script id="page17.html" type="text/ng-template">
     <ion-view view-title="Details">
         <div class="bar bar-header bar-calm bar-positive">
-            <h1 class="title">bar-calm</h1>
+            <h1 class="title">{{church.name}}</h1>
         </div>
         <ion-content padding="true" class="has-header">
-            <div class="list card">
-                <div class="item item-divider">{{church.name}}</div>
-                <div class="item item-body">
-                    <ion-item>{{church.address}} </br> {{church.city}} {{church.state}} {{church.zipcode}}</ion-item>
-                    <ion-item>{{church.url}}</ion-item>
-                    <ion-item>{{church.phone}}</ion-item>
-                    <ion-item>
-                        <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="map.options">
-                            <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events"
-                                            idkey="marker.id">
-                            </ui-gmap-marker>
-                        </ui-gmap-google-map>
-                    </ion-item>
 
-                </div>
-            </div>
+
+            <md-card>
+            <span class="sunday-times">{{church.address}} </br>
+                {{church.city}} {{church.state}} {{church.zipcode}}</span>
+                <span class="more-details">{{church.url}}</span>
+                <span class="more-details">{{church.phone}}</span>
+            </md-card>
+
+            <md-card>
+                <span class="sunday-times">Sunday: 12:00, 15:00, 17:00 </span>
+                <span class="sunday-times">Monday: 12:00, 15:00, 17:00</span>
+                <span class="sunday-times">Tuesday: 12:00, 15:00, 17:00</span>
+                <span class="sunday-times">Wednesday: 12:00, 15:00, 17:00</span>
+                <span class="sunday-times">Thursday: 12:00, 15:00, 17:00</span>
+                <span class="sunday-times">Friday: 12:00, 15:00, 17:00</span>
+                <span class="sunday-times">Saturday: 12:00, 15:00, 17:00</span>
+            </md-card>
+            <md-card>
+                <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="map.options">
+                    <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events"
+                                    idkey="marker.id">
+                    </ui-gmap-marker>
+                </ui-gmap-google-map>
+
+
+            </md-card>
+
         </ion-content>
     </ion-view></script>
 

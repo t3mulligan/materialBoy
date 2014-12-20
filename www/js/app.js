@@ -159,6 +159,9 @@ angular.module('app', ['ionic', 'uiGmapgoogle-maps', 'ng-cordova', 'ngMaterial']
           'lat': churchLat,
           'long': churchLong
         });
+
+
+
       }
       console.log($scope.churchArray);
       $location.path('/results');
