@@ -22,6 +22,23 @@ angular.module('app', ['ionic', 'uiGmapgoogle-maps', 'ng-cordova', 'ngMaterial']
 
     };
 
+
+
+ // concatenate sunday times yoyo
+
+      var concatSunday = function(){
+
+
+
+      }
+
+
+
+
+
+
+
+
 // onError Callback receives a PositionError object
 //
     function onError(error) {
