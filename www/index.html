@@ -78,20 +78,46 @@
 
         <ion-content class="has-header" padding="true">
 
-            <md-card ng-repeat="church in churchArray | orderBy : 'id' | filter:{'hasSundayMass' : 'true'}"
-                     ng-click="goDetails(church)">
-                <h3>{{church.name}}</h3>
-
+            <md-content>
                 <md-list>
-                    <md-item ng-repeat="time in church.times | filter: {'day': 'Sunday    '}">
+                    <md-item ng-repeat="church in churchArray | orderBy : 'id' | filter:{'hasSundayMass' : 'true'}"
+                    ng-click="goDetails(church)">
+                        <h3>{{church.name}}</h3>
+                        <h4>{{church.sundayStr}}</h4>
+                        <p>Click for more details...</p>
 
-                        <md-item-content>{{time.time}}</md-item-content>
-                    </md-item>
+
+
+
 
 
                 </md-list>
 
-            </md-card>
+
+
+
+            </md-content>
+
+
+
+
+
+
+
+            <!--<md-list ng-repeat="church in churchArray | orderBy : 'id' | filter:{'hasSundayMass' : 'true'}"-->
+                     <!--ng-click="goDetails(church)">-->
+                <!--<h3>{{church.name}}</h3>-->
+
+                <!--<md-list>-->
+                    <!--<md-item ng-repeat="time in church.times | filter: {'day': 'Sunday    '}">-->
+
+                        <!--<md-item-content>{{time.time}}</md-item-content>-->
+                    <!--</md-item>-->
+
+
+                <!--</md-list>-->
+
+            <!--</md-list>-->
         </ion-content>
 
 
@@ -111,7 +137,7 @@
 
 <script id="page17.html" type="text/ng-template">
     <ion-view view-title="Details">
-        <div class="bar bar-header bar-positive">
+        <div class="bar bar-header bar-calm bar-positive">
             <h1 class="title">bar-calm</h1>
         </div>
         <ion-content padding="true" class="has-header">

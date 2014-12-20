@@ -24,17 +24,6 @@ angular.module('app', ['ionic', 'uiGmapgoogle-maps', 'ng-cordova', 'ngMaterial']
 
 
 
- // concatenate sunday times yoyo
-
-      var concatSunday = function(){
-
-
-
-      }
-
-
-
-
 
 
 
@@ -137,6 +126,7 @@ angular.module('app', ['ionic', 'uiGmapgoogle-maps', 'ng-cordova', 'ngMaterial']
 
         var times = [];
         var hasSundayMass = false;
+        var sundayStr="";
         for (var j = 0; j < rawData[i].church_worship_times.length; j++) {
           times.push({
             'day': rawData[i].church_worship_times[j].day_of_week,
@@ -144,10 +134,19 @@ angular.module('app', ['ionic', 'uiGmapgoogle-maps', 'ng-cordova', 'ngMaterial']
           });
           if (rawData[i].church_worship_times[j].day_of_week === "Sunday    ") {
             hasSundayMass = true;
+            if(sundayStr.length<1) {
+              sundayStr = rawData[i].church_worship_times[j].time_start;
+            }
+            else if(sundayStr.length>1){
+              sundayStr = sundayStr + ", " + rawData[i].church_worship_times[j].time_start;
+            }
+
           }
+
         }
         $scope.churchArray.push({
           'hasSundayMass': hasSundayMass,
+          'sundayStr':sundayStr,
           'id': i,
           'name': churchName,
           'times': times,
@@ -160,10 +159,8 @@ angular.module('app', ['ionic', 'uiGmapgoogle-maps', 'ng-cordova', 'ngMaterial']
           'lat': churchLat,
           'long': churchLong
         });
-
-
-        console.log($scope.churchArray);
       }
+      console.log($scope.churchArray);
       $location.path('/results');
       $ionicLoading.hide();
 
