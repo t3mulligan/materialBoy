@@ -5,3 +5,28 @@
 }
 .angular-google-map-container { height: 200px; }
 
+
+.mainhome{
+
+    padding-top: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    padding-bottom: 10px;
+
+}
+
+
+.space{
+
+    padding:5px;
+}
+
+.underline{
+
+
+    border-bottom: solid;
+    border-width: thin;
+    border-color: lightgray;
+
+}

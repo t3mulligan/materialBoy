@@ -41,18 +41,16 @@
 <script id="page13.html" type="text/ng-template">
     <ion-view view-title="materialBoy">
         <md-content>
-            <md-toolbar>
-                <h2 class="md-toolbar-tools">
-                    <span>materialBoy</span>
-                </h2>
-            </md-toolbar>
-            <md-card>
-                <form layout="column">
-                    <md-text-float label="Location" ng-model="form1.zipBox"></md-text-float>
+
+<div class="mainhome">
+                    <form layout="column">
+                    <md-text-float class="underline" label="Location" ng-model="form1.zipBox"></md-text-float>
                     <md-button ng-click="searchZip()" class="md-raised md-primary">Search</md-button>
+<span class="space"></span>
+
                     <md-button ng-click="geoLoc()" class="md-raised">Near Me</md-button>
                 </form>
-            </md-card>
+           </div>
         </md-content>
 
         <!--<ion-content padding="true" class="has-header">-->
@@ -73,7 +71,12 @@
 <script id="page15.html" type="text/ng-template">
     <ion-view view-title="Results">
 
-        <ion-content>
+        <div class="bar bar-header bar-calm">
+            <h1 class="title">bar-calm</h1>
+        </div>
+
+        <ion-content class="has-header" padding="true">
+
             <md-card ng-repeat="church in churchArray | orderBy : 'id' | filter:{'hasSundayMass' : 'true'}"
                      ng-click="goDetails(church)">
                 <h3>{{church.name}}</h3>
@@ -107,6 +110,9 @@
 
 <script id="page17.html" type="text/ng-template">
     <ion-view view-title="Details">
+        <div class="bar bar-header bar-calm barcolor">
+            <h1 class="title">bar-calm</h1>
+        </div>
         <ion-content padding="true" class="has-header">
             <div class="list card">
                 <div class="item item-divider">{{church.name}}</div>
