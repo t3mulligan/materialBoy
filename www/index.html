@@ -21,6 +21,7 @@
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="lib/angular-material/angular-material.css" rel="stylesheet">
     <link rel="stylesheet" href="lib/angular-material/themes/indigo-theme.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,700,400' rel='stylesheet' type='text/css'>
     <link href="css/style.css" rel="stylesheet">
 
 
@@ -49,6 +50,7 @@
                     <md-button ng-click="geoLoc()" class="md-raised">Near Me</md-button>
                 </form>
             </div>
+
         </md-content>
 
         <!--<ion-content padding="true" class="has-header">-->
@@ -70,7 +72,7 @@
     <ion-view view-title="Results">
 
         <div class="bar bar-header bar-positive">
-            <h1 class="title">Results</h1>
+            <span class="t-bar">Results</span>
         </div>
 
         <ion-content class="has-header" padding="true">
@@ -125,7 +127,7 @@
 <script id="page17.html" type="text/ng-template">
     <ion-view view-title="Details">
         <div class="bar bar-header bar-calm bar-positive">
-            <h1 class="title">{{church.name}}</h1>
+            <span class="t-bar">{{church.name}}</span>
         </div>
         <ion-content padding="true" class="has-header">
 
