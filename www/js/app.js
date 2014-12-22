@@ -1,6 +1,33 @@
 angular.module('app', ['ionic', 'uiGmapgoogle-maps', 'ng-cordova', 'ngMaterial'])
 
-  .controller('controller1', function ($scope, $http, $location, $ionicLoading) {
+
+
+    //.controller('RightCtrl', function($scope, $timeout, $mdSidenav, $log) {
+    //    $scope.close = function() {
+    //        $mdSidenav('right').close()
+    //            .then(function(){
+    //                $log.debug("close RIGHT is done");
+    //            });
+    //    };
+    //})
+    //
+
+
+
+
+
+    .controller('controller1', function ($scope, $http, $location, $ionicLoading, $log, $mdSidenav) {
+
+        //$scope.toggleRight = function() {
+        //    $mdSidenav('right').toggle()
+        //};
+
+
+        //function ContentController($scope, $ionicSideMenuDelegate) {
+        //    $scope.toggleLeft = function() {
+        //        $ionicSideMenuDelegate.toggleLeft();
+        //    };
+        //}
 
     $scope.form1 = {};
 

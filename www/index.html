@@ -71,9 +71,39 @@
 <script id="page15.html" type="text/ng-template">
     <ion-view view-title="Results">
 
-        <div class="bar bar-header bar-positive">
-            <span class="t-bar">Results</span>
-        </div>
+        <ion-nav-bar class="my-bar">
+            <ion-nav-back-button>
+
+            </ion-nav-back-button>
+            <ion-nav-buttons side="right">
+                <button class="button button-clear" ng-click="">
+                    <i class="ion-android-stair-drawer"></i>
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+
+
+
+        <!--<md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">-->
+            <!--<md-toolbar>-->
+                <!--<h1 class="md-toolbar-tools my-bar">Sidenav Right</h1>-->
+            <!--</md-toolbar>-->
+
+            <!--<md-radio-group>-->
+
+                <!--<md-radio-button aria-label="Label1">A to Z</md-radio-button>-->
+                <!--<md-radio-button aria-label="Label2">Starting Soon</md-radio-button>-->
+                <!--<md-radio-button aria-label="Label3">Distance</md-radio-button>-->
+
+            <!--</md-radio-group>-->
+            <!--<div class="test-width">-->
+                <!--<md-slider md-discrete step="1" min="1" max="5" aria-label="rating">-->
+                <!--</md-slider>-->
+            <!--</div>-->
+
+
+        <!--</md-sidenav>-->
+
 
         <ion-content class="has-header" padding="true">
 
@@ -126,9 +156,9 @@
 
 <script id="page17.html" type="text/ng-template">
     <ion-view view-title="Details">
-        <div class="bar bar-header bar-calm bar-positive">
-            <span class="t-bar">{{church.name}}</span>
-        </div>
+        <ion-nav-bar class="my-bar">
+            <ion-nav-back-button></ion-nav-back-button>
+        </ion-nav-bar>
         <ion-content padding="true" class="has-header">
 
 
