@@ -29,6 +29,13 @@ angular.module('app', ['ionic', 'uiGmapgoogle-maps', 'ng-cordova', 'ngMaterial']
         //    };
         //}
 
+      function ContentController($scope, $ionicSideMenuDelegate) {
+        $scope.toggleLeft = function() {
+          $ionicSideMenuDelegate.toggleLeft();
+        };
+      }
+
+
     $scope.form1 = {};
 
 
